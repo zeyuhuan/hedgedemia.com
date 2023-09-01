@@ -26,14 +26,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 300%;
-            /* Allows for the slower scroll effect */
-            background-image: linear-gradient(rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), url('images/background.jpeg');
+            height: 240%;
+            background-image: linear-gradient(rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), url('images/background_1.jpeg');
             background-size: 100% auto;
-            /* Adjusts the width to window size */
             z-index: -1;
         }
-
 
         .transparent {
             background: transparent;
@@ -55,7 +52,6 @@
             margin: 0 10px;
         }
 
-        /* Navigation bar styles */
         .navbar {
             position: fixed;
             top: 0;
@@ -73,27 +69,41 @@
             text-decoration: none;
             cursor: pointer;
             margin: 0 10px;
-            /* Removed the box styling */
-            /* padding: 5px 10px; */
-            /* border: 1px solid white; */
-            /* border-radius: 5px; */
         }
 
         .navbar a:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            /* Subtle hover effect */
             color: white;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbar,
+        #panel1 {
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+            /* 0.5 seconds delay added */
         }
     </style>
 </head>
 
 <body>
-
     <!-- Navigation bar -->
     <div class="navbar">
-        <a href="#panel1">Hedgedemia</a>
+        <a href="#panel1">Home</a>
         <a href="#panel2">Vision</a>
-        <a href="#panel3">Performance</a>
         <a href="#panel4">Contact</a>
     </div>
 
@@ -110,13 +120,6 @@
     </div>
 
     <div class="panel transparent" id="panel3">
-        <div class="statistics">
-            <div>annualized return: 40%</div>
-            <div>sharpe ratio: 3%</div>
-        </div>
-    </div>
-
-    <div class="panel transparent" id="panel4">
         <div>
             <h2>Contact Us</h2>
             <a href="mailto:contact@hedgedemia.com">contact@hedgedemia.com</a>
@@ -129,19 +132,15 @@
             document.getElementById('background').style.transform = 'translateY(' + (scrolled * 0.33) + 'px)';
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-
     </script>
-
 </body>
 
 </html>
