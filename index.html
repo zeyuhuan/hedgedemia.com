@@ -27,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 240%;
-            background-image: linear-gradient(rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), url('images/background_1.jpeg');
+            background-image: linear-gradient(rgba(95, 164, 187, 0.816), rgba(173, 216, 230, 0.5)), url('images/background_1.jpeg');
             background-size: 100% auto;
             z-index: -1;
         }
@@ -96,6 +96,35 @@
             animation-delay: 0.5s;
             /* 0.5 seconds delay added */
         }
+
+        #panel3 div {
+            display: flex;
+            /* Flex container */
+            align-items: center;
+            /* Center the content vertically */
+            gap: 20px;
+            /* Space between the title and email link */
+        }
+
+        #panel3 a {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Light background for contrast */
+            /* padding: 5px 15px; */
+            /* Padding around the link for a better look */
+            /* border: 1px solid white; */
+            /* Subtle border */
+            /* border-radius: 5px; */
+            /* Rounded corners */
+            color: white;
+            /* Change the link color to white */
+            text-decoration: none;
+            /* Remove the underline */
+        }
+
+        #panel3 a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Slightly darker background on hover */
+        }
     </style>
 </head>
 
@@ -125,6 +154,7 @@
             <a href="mailto:contact@hedgedemia.com">contact@hedgedemia.com</a>
         </div>
     </div>
+
 
     <script>
         window.addEventListener('scroll', function () {
