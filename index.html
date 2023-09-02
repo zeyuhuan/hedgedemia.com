@@ -26,9 +26,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 240%;
-            background-image: linear-gradient(rgba(95, 164, 187, 0.816), rgba(173, 216, 230, 0.5)), url('images/background_1.jpeg');
-            background-size: 100% auto;
+            height: 220%;
+            background-image: linear-gradient(rgba(122, 173, 189, 0), rgba(173, 216, 230, 0)), url('images/background_3.jpeg');
+            background-size: cover;
+            background-position: center;
             z-index: -1;
         }
 
@@ -106,6 +107,21 @@
             /* Space between the title and email link */
         }
 
+        #panel2 ul {
+            list-style-type: none;
+            /* Removes bullets */
+            padding: 0;
+            /* Removes default padding */
+            margin: 0;
+            /* Removes default margin */
+        }
+
+        #panel2 li {
+            padding: 8px 0;
+            /* Adds vertical spacing between items */
+        }
+
+
         #panel3 a {
             background-color: rgba(255, 255, 255, 0.1);
             /* Light background for contrast */
@@ -145,7 +161,16 @@
     </div>
 
     <div class="panel white" id="panel2">
-        <p>we utilize simple and effective model to capture market trends</p>
+        <ul>
+            <li>Live trading Sharpe Ratio: 3.09</p>
+            <li>Live trading annualized return: 30.99% </p>
+            <li>Deploy long strategies with hedging for extreme tail events.</p>
+            <li>Use state-of-the-art reinforcement learning techniques to find the optimal balance between buying,
+                selling,
+                holding cash and hedging. </p>
+            <li>Strategies are backtested minute by minute with years of data. </p>
+            <li>Strategies are completely executed with automated programs. </p>
+        </ul>
     </div>
 
     <div class="panel transparent" id="panel3">
@@ -159,7 +184,7 @@
     <script>
         window.addEventListener('scroll', function () {
             const scrolled = window.scrollY;
-            document.getElementById('background').style.transform = 'translateY(' + (scrolled * 0.33) + 'px)';
+            document.getElementById('background').style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
